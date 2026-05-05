@@ -10,6 +10,7 @@ import lombok.Data;
 
 
 @Entity
+@Table(name = "familyhelp")
 public class Family {
 
 	@Id
