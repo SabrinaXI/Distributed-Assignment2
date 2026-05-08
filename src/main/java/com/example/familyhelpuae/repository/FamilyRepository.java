@@ -5,4 +5,7 @@ import com.example.familyhelpuae.model.Family;
 
 public interface FamilyRepository extends JpaRepository<Family, Integer> {
 
+	Family findByEmail(String email);		// or Optional<Family> findByEmail(String email);
+	
+
 }

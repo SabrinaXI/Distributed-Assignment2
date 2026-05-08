@@ -1,6 +1,7 @@
 package com.example.familyhelpuae.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.familyhelpuae.exception.ResourceNotFoundException;
@@ -13,9 +14,12 @@ public class FamilyServiceImpl implements FamilyService {
 
     @Autowired
     private FamilyRepository familyRepository;
+    
+    BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
 
     @Override
     public Family registerFamily(Family family) {
+    	family.setPassword(encoder.encode(family.getPassword()));
         return familyRepository.save(family);
     }
 
