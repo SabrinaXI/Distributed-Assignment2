@@ -5,8 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.Data;
 
 
 @Entity
@@ -164,10 +162,10 @@ public class Family {
 	//TO STRING METHOD
 	@Override
 	public String toString() {
-		return "Family [familyId=" + familyId + ", familyName=" + familyName + ", email=" + email + ", password="
-				+ password + ", phoneNumber=" + phoneNumber + ", city=" + city + ", address=" + address + ", bio=" + bio
-				+ ", trustScore=" + trustScore + ", completedTasks=" + completedTasks + ", averageRating="
-				+ averageRating + ", numberOfMembers=" + numberOfMembers + "]";
+		return "Family [familyId=" + familyId + ", familyName=" + familyName + ", email=" + email + ", phoneNumber="
+				+ phoneNumber + ", city=" + city + ", address=" + address + ", bio=" + bio + ", trustScore="
+				+ trustScore + ", completedTasks=" + completedTasks + ", averageRating=" + averageRating
+				+ ", numberOfMembers=" + numberOfMembers + "]";
 	}
 	
 	
