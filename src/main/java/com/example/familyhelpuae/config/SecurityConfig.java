@@ -26,7 +26,7 @@ public class SecurityConfig {
     	http.csrf(customizer -> customizer.disable());
     	
         http.authorizeHttpRequests(auth -> auth
-                .requestMatchers("/login.html", "/css/**", "/js/**", "/images/**").permitAll()
+                .requestMatchers("/api/auth/register", "/login.html", "/css/**", "/js/**", "/images/**", "/error").permitAll()
                 .anyRequest().authenticated()
         );
         
@@ -34,7 +34,7 @@ public class SecurityConfig {
         	       .loginPage("/login.html")
         	       .defaultSuccessUrl("/dashboard.html", true)
         	       .permitAll()
-        	);
+        );
         
         http.httpBasic(basic -> basic.disable());
         	

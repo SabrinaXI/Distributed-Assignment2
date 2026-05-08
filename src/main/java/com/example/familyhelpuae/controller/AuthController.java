@@ -23,6 +23,7 @@ public class AuthController {
 	//register
     @PostMapping("/register")
     public Family registerFamily(@RequestBody Family family) {
+    	System.out.println("REGISTER CALLED " +family.getEmail());
         return familyService.registerFamily(family);
     }
 

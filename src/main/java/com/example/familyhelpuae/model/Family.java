@@ -31,13 +31,13 @@ public class Family {
 	
 	private String bio;
 	
-	private double trustScore;
+	private Double trustScore;
 	
-	private int completedTasks;
+	private Integer completedTasks;
 	
-	private double averageRating;
+	private Double averageRating;
 	
-	private int numberOfMembers;
+	private Integer numberOfMembers;
 
 	
 	//CONSTRUCTORS
@@ -46,8 +46,8 @@ public class Family {
 	}
 
 	public Family(Integer familyId, String familyName, String email, String password, String phoneNumber, String city,
-			String address, String bio, double trustScore, int completedTasks, double averageRating,
-			int numberOfMembers) {
+			String address, String bio, Double trustScore, Integer completedTasks, Double averageRating,
+			Integer numberOfMembers) {
 		super();
 		this.familyId = familyId;
 		this.familyName = familyName;
@@ -128,35 +128,35 @@ public class Family {
 		this.bio = bio;
 	}
 
-	public double getTrustScore() {
+	public Double getTrustScore() {
 		return trustScore;
 	}
 
-	public void setTrustScore(double trustScore) {
+	public void setTrustScore(Double trustScore) {
 		this.trustScore = trustScore;
 	}
 
-	public int getCompletedTasks() {
+	public Integer getCompletedTasks() {
 		return completedTasks;
 	}
 
-	public void setCompletedTasks(int completedTasks) {
+	public void setCompletedTasks(Integer completedTasks) {
 		this.completedTasks = completedTasks;
 	}
 
-	public double getAverageRating() {
+	public Double getAverageRating() {
 		return averageRating;
 	}
 
-	public void setAverageRating(double averageRating) {
+	public void setAverageRating(Double averageRating) {
 		this.averageRating = averageRating;
 	}
 
-	public int getNumberOfMembers() {
+	public Integer getNumberOfMembers() {
 		return numberOfMembers;
 	}
 
-	public void setNumberOfMembers(int numberOfMembers) {
+	public void setNumberOfMembers(Integer numberOfMembers) {
 		this.numberOfMembers = numberOfMembers;
 	}
 

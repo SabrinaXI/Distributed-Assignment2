@@ -19,7 +19,12 @@ public class FamilyServiceImpl implements FamilyService {
 
     @Override
     public Family registerFamily(Family family) {
+    	
     	family.setPassword(encoder.encode(family.getPassword()));
+    	
+    	family.setTrustScore(0.0);
+    	family.setCompletedTasks(0);
+    	family.setAverageRating(0.0);
         return familyRepository.save(family);
     }
 
