@@ -86,58 +86,37 @@ function registerFamily(event){
 
 function updateFamily(){
 
-    const familyId =
-        document.getElementById("familyId").value;
+    const familyId = document.getElementById("familyId").value;
 
     const family = {
-
-        familyName:
-            document.getElementById("familyNameUpdate").value,
-
-        phoneNumber:
-            document.getElementById("phoneNumberUpdate").value,
-
-        city:
-            document.getElementById("cityUpdate").value,
-
-        address:
-            document.getElementById("addressUpdate").value,
-
-        bio:
-            document.getElementById("bioUpdate").value,
-
-        numberOfMembers:
-            document.getElementById("membersUpdate").value
+        familyName: document.getElementById("familyNameUpdate").value,
+        phoneNumber: document.getElementById("phoneNumberUpdate").value,
+        city: document.getElementById("cityUpdate").value,
+        address: document.getElementById("addressUpdate").value,
+        bio: document.getElementById("bioUpdate").value,
+        numberOfMembers: document.getElementById("membersUpdate").value
     };
 
-    fetch("/api/family/" + familyId + "/profile",{
-
-        method:"PUT",
-
-        headers:{
-            "Content-Type":"application/json"
+    fetch("/api/family/" + familyId + "/profile", {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
         },
-
-        body:JSON.stringify(family)
-
+        body: JSON.stringify(family)
     })
-
-    .then(response => response.json())
-
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Update failed with status " + response.status);
+        }
+        return response.json();
+    })
     .then(data => {
-
-        showMessage(
-            "Family updated successfully."
-        );
-
+        showMessage("Family updated successfully.");
+        console.log(data);
     })
-
     .catch(error => {
-
-        showMessage(
-            "Failed to update family."
-        );
-
+        showMessage("Failed to update family: " + error.message);
+        console.log(error);
     });
 }
 
@@ -145,52 +124,35 @@ function updateFamily(){
 
 function createHelpOffer(){
 
-    const familyId =
-        document.getElementById("offerFamilyId").value;
+    const familyId = document.getElementById("offerFamilyId").value;
 
     const helpOffer = {
-
-        title:
-            document.getElementById("offerTitle").value,
-
-        description:
-            document.getElementById("offerDescription").value,
-
-        category:
-            document.getElementById("offerCategory").value,
-
-        availability:
-            document.getElementById("offerAvailability").value
+        title: document.getElementById("offerTitle").value,
+        description: document.getElementById("offerDescription").value,
+        category: document.getElementById("offerCategory").value,
+        availability: document.getElementById("offerAvailability").value
     };
 
-    fetch("/helpOffers/" + familyId,{
-
-        method:"POST",
-
-        headers:{
-            "Content-Type":"application/json"
+    fetch("/helpOffers/" + familyId, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
         },
-
-        body:JSON.stringify(helpOffer)
-
+        body: JSON.stringify(helpOffer)
     })
-
-    .then(response => response.json())
-
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Request failed with status " + response.status);
+        }
+        return response.json();
+    })
     .then(data => {
-
-        showMessage(
-            "Help offer created successfully."
-        );
-
+        showMessage("Help offer created successfully.");
+        console.log(data);
     })
-
     .catch(error => {
-
-        showMessage(
-            "Failed to create help offer."
-        );
-
+        showMessage("Failed to create help offer: " + error.message);
+        console.log(error);
     });
 }
 
