@@ -16,7 +16,7 @@ public class AuthController {
 	 @Autowired
 	 private FamilyService familyService;
 	
-	//login
+	//login (not /api/auth/login
 	//no need to create /login mapping since Spring security will handle it
 	
 	
