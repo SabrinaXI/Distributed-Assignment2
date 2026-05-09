@@ -43,7 +43,7 @@ public class HelpOfferServiceImpl implements HelpOfferService {
 
     @Override
     public List<HelpOffer> getOffersByFamily(Integer familyId) {
-        return helpOfferRepository.findByFamilyId(familyId);
+        return helpOfferRepository.findByFamilyFamilyId(familyId);
     }
 
     @Override

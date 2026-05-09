@@ -12,5 +12,5 @@ public interface HelpOfferRepository extends JpaRepository<HelpOffer, Long> {
 
     List<HelpOffer> findByCategory(String category);
 
-    List<HelpOffer> findByFamilyId(Integer familyId);
+    List<HelpOffer> findByFamilyFamilyId(Integer familyId);
 }
