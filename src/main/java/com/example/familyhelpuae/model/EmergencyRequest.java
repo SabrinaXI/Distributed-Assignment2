@@ -1,5 +1,7 @@
 package com.example.familyhelpuae.model;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -8,22 +10,23 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-public class HelpOffer {
+public class EmergencyRequest {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;
-    private String description;
-    private String category;
-    private String availability;
+    private String location;
+    private String priorityLevel;
+    private String status;
+    private LocalDateTime requestTime;
 
     @ManyToOne
     @JoinColumn(name = "family_id")
     private Family family;
 
-    public HelpOffer() {
+    public EmergencyRequest() {
     }
 
     public Long getId() {
@@ -42,28 +45,36 @@ public class HelpOffer {
         this.title = title;
     }
 
-    public String getDescription() {
-        return description;
+    public String getLocation() {
+        return location;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
-    public String getCategory() {
-        return category;
+    public String getPriorityLevel() {
+        return priorityLevel;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setPriorityLevel(String priorityLevel) {
+        this.priorityLevel = priorityLevel;
     }
 
-    public String getAvailability() {
-        return availability;
+    public String getStatus() {
+        return status;
     }
 
-    public void setAvailability(String availability) {
-        this.availability = availability;
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public LocalDateTime getRequestTime() {
+        return requestTime;
+    }
+
+    public void setRequestTime(LocalDateTime requestTime) {
+        this.requestTime = requestTime;
     }
 
     public Family getFamily() {
