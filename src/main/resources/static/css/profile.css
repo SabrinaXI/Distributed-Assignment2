@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+
+    background-image: url('/images/homepageBG.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: #222;
+}
+
+.navbar {
+    background-color: rgba(34, 19, 74, 0.85);
+    backdrop-filter: blur(4px);
+
+    padding: 18px 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.nav-center {
+    display: flex;
+    gap: 50px;
+}
+
+.nav-center a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.nav-center a:hover {
+    color: #d7d4ff;
+}
+
+#logoutBtn {
+    position: absolute;
+    right: 40px;
+
+    background-color: white;
+    color: #22134a;
+
+    border: none;
+    border-radius: 20px;
+
+    padding: 10px 18px;
+
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#logoutBtn:hover {
+    background-color: #d7d4ff;
+}
+
+.page-container {
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.profile-card {
+    width: 700px;
+
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(4px);
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.profile-card h1 {
+    margin-top: 0;
+    margin-bottom: 30px;
+
+    text-align: center;
+    color: #22134a;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 18px;
+
+    background-color: #f7f5ff;
+    border-radius: 12px;
+}
+
+.label {
+    font-weight: bold;
+    color: #22134a;
+}

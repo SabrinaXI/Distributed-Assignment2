@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Leave Feedback</title>
+    <link rel="stylesheet" href="/css/feedback.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-center">
+        <a href="/dashboard.html">Homepage</a>
+        <a href="/help-offer.html">Offer Help</a>
+        <a href="/ask-help.html">Ask for Help</a>
+        <a href="/my-tasks.html">My Tasks</a>
+        <a href="/profile.html">My Profile</a>
+    </div>
+
+    <button id="logoutBtn">Logout</button>
+</nav>
+
+<main class="page-container">
+
+    <div class="feedback-card">
+        <h1>Leave Feedback</h1>
+        <p class="subtitle">Rate the family who helped you.</p>
+
+        <div id="message" class="message" style="display: none;"></div>
+
+        <form id="feedbackForm">
+
+            <div class="form-group">
+                <label for="rating">Rating</label>
+                <select id="rating" required>
+                    <option value="">Select rating</option>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="3">3 - Good</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="1">1 - Poor</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="comment">Comment</label>
+                <textarea id="comment" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Feedback</button>
+            <button type="button" id="backBtn" class="back-btn">Back to My Tasks</button>
+
+        </form>
+    </div>
+
+</main>
+
+<script src="/js/feedback.js"></script>
+
+</body>
+</html>

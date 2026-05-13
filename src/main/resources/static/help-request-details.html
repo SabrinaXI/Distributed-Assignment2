@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Help Request Details</title>
+    <link rel="stylesheet" href="/css/help-request-details.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-center">
+            <a href="/dashboard.html">Homepage</a>
+            <a href="/help-offer.html">Offer Help</a>
+            <a href="/ask-help.html">Ask for Help</a>
+			<a href="/my-tasks.html">My Tasks</a>
+            <a href="/profile.html">My Profile</a>
+        </div>
+
+        <button id="logoutBtn">Logout</button>
+    </nav>
+
+    <main class="page-container">
+
+        <div class="details-card">
+            <h1 id="requestTitle">Loading...</h1>
+
+            <p><strong>Category:</strong> <span id="requestCategory"></span></p>
+            <p><strong>City:</strong> <span id="requestCity"></span></p>
+            <p><strong>Requested Date:</strong> <span id="requestedDate"></span></p>
+            <p><strong>Needed Date:</strong> <span id="neededDate"></span></p>
+
+            <div class="description-box">
+                <h3>Description</h3>
+                <p id="requestDescription"></p>
+            </div>
+
+            <div id="message" class="message" style="display: none;"></div>
+
+            <button id="acceptBtn" class="accept-btn">Accept Request</button>
+            <button id="backBtn" class="back-btn">Back to Dashboard</button>
+			
+			
+			<section class="recommendation-section">
+					    <h2>Recommended Help Offers</h2>
+					    <div id="recommendedOffersList" class="cards-container">
+					        <p class="empty-message">
+					            Loading recommendations...
+					        </p>
+					    </div>
+					</section>
+        </div>
+
+    </main>
+	
+	
+
+    <script src="/js/help-request-details.js"></script>
+
+</body>
+
+</html>

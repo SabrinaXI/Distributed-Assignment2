@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Tasks</title>
+    <link rel="stylesheet" href="/css/my-tasks.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-center">
+            <a href="/dashboard.html">Homepage</a>
+            <a href="/help-offer.html">Offer Help</a>
+            <a href="/ask-help.html">Ask for Help</a>
+            <a href="/my-tasks.html">My Tasks</a>
+            <a href="/profile.html">My Profile</a>
+        </div>
+
+        <button id="logoutBtn">Logout</button>
+    </nav>
+
+    <main class="page-container">
+
+        <section class="header-card">
+            <h1>My Tasks</h1>
+            <p>View help requests you asked for or accepted from other families.</p>
+        </section>
+
+        <section class="content-section">
+            <div id="tasksList" class="cards-container">
+                <p class="empty-message">Loading tasks...</p>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="/js/my-tasks.js"></script>
+
+</body>
+
+</html>

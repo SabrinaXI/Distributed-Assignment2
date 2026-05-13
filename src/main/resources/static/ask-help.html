@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ask for Help</title>
+    <link rel="stylesheet" href="/css/ask-help.css">
+</head>
+
+<body>
+
+	<nav class="navbar">
+	    <div class="nav-center">
+	        <a href="/dashboard.html">Homepage</a>
+	        <a href="/help-offer.html">Offer Help</a>
+	        <a href="/ask-help.html">Ask for Help</a>
+			<a href="/my-tasks.html">My Tasks</a>
+	        <a href="/profile.html">My Profile</a>
+	    </div>
+
+	    <button id="logoutBtn">Logout</button>
+	</nav>
+
+    <main class="page-container">
+
+        <div class="form-card">
+            <h1>Ask for Help</h1>
+            <p class="subtitle">Submit a request so another family can support you.</p>
+
+            <div id="message" class="message" style="display: none;"></div>
+
+            <form id="helpRequestForm">
+
+                <div class="form-group">
+                    <label for="title">Request Title</label>
+                    <input type="text" id="title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" rows="5" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" required>
+                        <option value="">Select category</option>
+                        <option value="Childcare">Childcare</option>
+                        <option value="Tutoring">Tutoring</option>
+                        <option value="Transportation">Transportation</option>
+                        <option value="Elder Care">Elder Care</option>
+                        <option value="Household Assistance">Household Assistance</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="neededDate">Needed Date</label>
+                    <input type="datetime-local" id="neededDate" required>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Request</button>
+
+            </form>
+        </div>
+
+    </main>
+
+    <script src="/js/ask-help.js"></script>
+
+</body>
+
+</html>

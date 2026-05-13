@@ -7,5 +7,7 @@ public interface FamilyService {
     Family registerFamily(Family family);
 
     Family updateFamily(Integer id, Family family);
+    
+    Family getCurrentFamily();
 
 }

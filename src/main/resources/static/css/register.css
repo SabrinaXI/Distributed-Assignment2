@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/images/signUpBG.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.32);
+    backdrop-filter: blur(4px);
+
+    padding: 30px;
+    border-radius: 14px;
+
+    width: 380px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+h1 {
+    text-align: center;
+    color: #22134a;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 13px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #000;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+
+    border: 1px solid #ddd;
+    border-radius: 6px;
+
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+
+    background-color: #22134a;
+    color: white;
+
+    border: none;
+    border-radius: 20px;
+
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #9c9dde;
+}
+
+.signin-link {
+    text-align: center;
+    margin-top: 18px;
+}
+
+.signin-link a {
+    color: #22134a;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.message {
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: #f44336;
+}

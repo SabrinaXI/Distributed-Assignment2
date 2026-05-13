@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
 
-    background-image: url('/images/homepageBG.png');
+    background-image: url('/images/askHelpBG.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -12,9 +12,7 @@ body {
 
 .navbar {
     background-color: rgba(34, 19, 74, 0.85);
-
     backdrop-filter: blur(4px);
-
     padding: 18px 40px;
 
     display: flex;
@@ -60,90 +58,85 @@ body {
     background-color: #d7d4ff;
 }
 
-.dashboard-container {
-    padding: 40px 60px;
+.page-container {
+    display: flex;
+    justify-content: center;
+    padding: 45px 20px;
 }
 
-.welcome-section {
-    background-color: rgba(255, 255, 255, 0.88);
-
+.form-card {
+    background-color: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(4px);
 
-    padding: 30px;
+    width: 450px;
+    padding: 35px;
 
-    border-radius: 20px;
-
-    margin-bottom: 30px;
-
+    border-radius: 18px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
-.welcome-section h1 {
+.form-card h1 {
     margin-top: 0;
+    text-align: center;
     color: #22134a;
 }
 
-.content-section {
-    margin-bottom: 35px;
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
 }
 
-.content-section h2 {
-    color: white;
+.form-group {
     margin-bottom: 18px;
 }
 
-.cards-container {
-    display: grid;
-
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-
-    gap: 20px;
-}
-
-.request-card {
-    background-color: rgba(255, 255, 255, 0.9);
-
-    backdrop-filter: blur(4px);
-
-    padding: 22px;
-
-    border-radius: 18px;
-
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-}
-
-.request-card h3 {
-    margin-top: 0;
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
     color: #22134a;
 }
 
-.request-card p {
-    margin: 8px 0;
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 0.95em;
 }
 
-.view-btn {
-    margin-top: 12px;
-
+.submit-btn {
+    width: 100%;
+    padding: 13px;
     background-color: #481a49;
     color: white;
 
     border: none;
-    border-radius: 20px;
-
-    padding: 10px 22px;
+    border-radius: 22px;
 
     cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
 }
 
-.view-btn:hover {
+.submit-btn:hover {
     background-color: #9c9dde;
 }
 
-.empty-message {
-   color: #22134a;
-   background-color: rgba(255, 255, 255, 0.9);
-   padding: 14px 18px;
-   border-radius: 12px;
-   font-style: italic;
+.message {
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
 }
 
+.success {
+    color: green;
+}
+
+.error {
+    color: #f44336;
+}

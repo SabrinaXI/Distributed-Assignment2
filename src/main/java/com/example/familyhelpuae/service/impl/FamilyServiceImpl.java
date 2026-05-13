@@ -1,6 +1,8 @@
 package com.example.familyhelpuae.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -43,4 +45,12 @@ public class FamilyServiceImpl implements FamilyService {
 
         return familyRepository.save(existingFamily);
     }
+
+    
+	@Override
+	public Family getCurrentFamily() {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();											//when user calls the endpoint api/family/me the user browser sends the cookie JSESSIONID=... along with the request. And then getContext().getAuthentication(); gives the authenticated user
+	    String email = authentication.getName();																						//getUsername in UserPrincipal
+	    return familyRepository.findByEmail(email);
+	}
 }

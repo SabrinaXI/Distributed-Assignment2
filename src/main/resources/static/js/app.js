@@ -1,8 +1,9 @@
+/*
 function showMessage(text){
     document.getElementById("message").innerText = text;
 }
 
-/* REGISTER */
+/* REGISTER 
 
 document.addEventListener("DOMContentLoaded", function(){
 
@@ -82,7 +83,7 @@ function registerFamily(event){
     });
 }
 
-/* UPDATE FAMILY */
+/* UPDATE FAMILY 
 
 function updateFamily(){
 
@@ -120,7 +121,7 @@ function updateFamily(){
     });
 }
 
-/* HELP OFFER */
+/* HELP OFFER 
 
 function createHelpOffer(){
 
@@ -255,7 +256,7 @@ function deleteHelpOffer(){
     });
 }
 
-/* EMERGENCY */
+/* EMERGENCY 
 
 function createEmergencyRequest(){
 
@@ -369,3 +370,5 @@ function resolveEmergencyRequest(){
 
     });
 }
+
+*/

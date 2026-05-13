@@ -17,6 +17,11 @@ public class FamilyController {
     public String test() {
         return "testing only";
     }
+    
+    @GetMapping("/me")
+    public Family getCurrentFamily() {
+        return familyService.getCurrentFamily();
+    }
 
     @PutMapping("/{familyId}/profile")
     public Family updateFamilyProfile(@PathVariable Integer familyId, @RequestBody Family family) {

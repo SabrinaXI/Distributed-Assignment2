@@ -1,14 +1,18 @@
 package com.example.familyhelpuae.service.impl;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.familyhelpuae.exception.ResourceNotFoundException;
 import com.example.familyhelpuae.model.Family;
 import com.example.familyhelpuae.model.HelpOffer;
+import com.example.familyhelpuae.model.HelpRequest;
 import com.example.familyhelpuae.repository.FamilyRepository;
 import com.example.familyhelpuae.repository.HelpOfferRepository;
+import com.example.familyhelpuae.repository.HelpRequestRepository;
 import com.example.familyhelpuae.service.HelpOfferService;
 
 @Service
@@ -19,14 +23,19 @@ public class HelpOfferServiceImpl implements HelpOfferService {
 
     @Autowired
     private FamilyRepository familyRepository;
+    
+    @Autowired
+    private HelpRequestRepository helpRequestRepository;
 
     @Override
-    public HelpOffer createHelpOffer(Integer familyId, HelpOffer helpOffer) {
+    public HelpOffer postHelpOffer(Integer familyId, HelpOffer helpOffer) {
 
         Family family = familyRepository.findById(familyId)
-                .orElseThrow(() -> new RuntimeException("Family not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Family", "familyId", familyId));
 
-        helpOffer.setFamily(family);
+        helpOffer.setOfferingFamily(family);
+        helpOffer.setStatus("AVAILABLE");
+        helpOffer.setCreatedDate(LocalDateTime.now());
 
         return helpOfferRepository.save(helpOffer);
     }
@@ -37,31 +46,47 @@ public class HelpOfferServiceImpl implements HelpOfferService {
     }
 
     @Override
-    public List<HelpOffer> getOffersByCategory(String category) {
-        return helpOfferRepository.findByCategory(category);
+    public List<HelpOffer> getHelpOffersByFamily(Integer familyId) {
+
+        Family family = familyRepository.findById(familyId)
+                .orElseThrow(() -> new ResourceNotFoundException("Family", "familyId", familyId));
+
+        return helpOfferRepository.findByOfferingFamily(family);
     }
 
     @Override
-    public List<HelpOffer> getOffersByFamily(Integer familyId) {
-        return helpOfferRepository.findByFamilyFamilyId(familyId);
+    public HelpOffer getHelpOfferById(Integer offerId) {
+        return helpOfferRepository.findById(offerId)
+                .orElseThrow(() -> new ResourceNotFoundException("HelpOffer", "offerId", offerId));
     }
 
     @Override
-    public HelpOffer updateHelpOffer(Long id, HelpOffer updatedOffer) {
+    public HelpOffer updateHelpOffer(Integer offerId, HelpOffer updatedOffer) {
 
-        HelpOffer existingOffer = helpOfferRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Help offer not found"));
+        HelpOffer existingOffer = getHelpOfferById(offerId);
 
         existingOffer.setTitle(updatedOffer.getTitle());
         existingOffer.setDescription(updatedOffer.getDescription());
         existingOffer.setCategory(updatedOffer.getCategory());
-        existingOffer.setAvailability(updatedOffer.getAvailability());
+        existingOffer.setCity(updatedOffer.getCity());
+        existingOffer.setStatus(updatedOffer.getStatus());
 
         return helpOfferRepository.save(existingOffer);
     }
 
     @Override
-    public void deleteHelpOffer(Long id) {
-        helpOfferRepository.deleteById(id);
+    public void deleteHelpOffer(Integer offerId) {
+
+        HelpOffer helpOffer = getHelpOfferById(offerId);
+
+        helpOfferRepository.delete(helpOffer);
     }
+
+	@Override
+	public List<HelpOffer> getRecommendedOffers(Integer requestId) {
+		HelpRequest helpRequest = helpRequestRepository.findById(requestId)
+				.orElseThrow(() ->new ResourceNotFoundException("Help Request","requestId",requestId));
+
+	    return helpOfferRepository.findByCategoryAndCity(helpRequest.getCategory(),helpRequest.getCity() );
+	}
 }
